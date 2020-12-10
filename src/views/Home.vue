@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<div>
+  <h1>Movies I Would and Would Not Watch</h1><br>
+  <MovieList :movies="movies" />
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import MovieList from "../components/MovieList.vue"
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
-  }
-};
+    MovieList
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+    movies() {
+      return this.$root.$data.movies;
+    }
+  },
+}
 </script>
+<style>
+h1 {text-align: center;}
+
+</style>
